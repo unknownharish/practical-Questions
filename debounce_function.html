@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="debounce" id='debounce'>
+</body>
+
+<script>
+    document.getElementById('debounce').addEventListener('click', debounce(func, 1000))
+
+    function func() {
+        alert('after some delay')
+    }
+
+    function debounce(cb, time) {
+        let id;
+        return () => {
+
+            if (id) {
+                clearTimeout(id)
+            }
+            id = setTimeout(() => {
+                cb.apply(this)
+            }, time);
+
+        }
+    }
+</script>
+
+</html>
