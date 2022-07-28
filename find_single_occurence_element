@@ -9,7 +9,7 @@ function findElement(arr) {
       ones = (ones ^ arr[i]) & ~twos;
       twos = (twos ^ arr[i]) & ~ones;
     }
-    return ones;
+    return ones; 
   }
 
   console.log(findElement(a))
