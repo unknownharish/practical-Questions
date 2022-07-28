@@ -1,0 +1,18 @@
+
+
+let a = [1, 5, 2, 3, 1, 2, 3, 1, 2, 3];
+
+function findElement(arr) {
+    var ones = 0;
+    var twos = 0;
+    for (var i = 0; i < arr.length; i++) {
+      ones = (ones ^ arr[i]) & ~twos;
+      twos = (twos ^ arr[i]) & ~ones;
+    }
+    return ones;
+  }
+
+  console.log(findElement(a))
+
+
+
