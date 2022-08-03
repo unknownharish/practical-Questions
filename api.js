@@ -5,7 +5,7 @@ app.use(express.json())
 
 // get request
 app.get('/', (req, res) => {
-    res.json({ 'method': 'get' })
+    res.send(req.body);
 })
 
 // post request
@@ -22,8 +22,8 @@ app.put('/', (req, res) => {
 
 // delete request
 app.delete('/', (req, res) => {
-    let data = req.body
-    res.json({ 'method': 'delete', data })
+    
+    res.send(req.body);
 })
 
 
